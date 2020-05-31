@@ -1,0 +1,638 @@
+Analysis & Synthesis report for z8ty-fpga
+Sun May 31 16:30:52 2020
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |z8ty_fpga_core|sd_controller:io4|return_state
+  9. State Machine - |z8ty_fpga_core|sd_controller:io4|state
+ 10. State Machine - |z8ty_fpga_core|bufferedUART:io3|txState
+ 11. State Machine - |z8ty_fpga_core|bufferedUART:io3|rxState
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: sd_controller:io4
+ 19. Port Connectivity Checks: "bufferedUART:io3"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun May 31 16:30:52 2020      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; z8ty-fpga                                  ;
+; Top-level Entity Name              ; z8ty_fpga_core                             ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 938                                        ;
+;     Total combinational functions  ; 759                                        ;
+;     Dedicated logic registers      ; 490                                        ;
+; Total registers                    ; 490                                        ;
+; Total pins                         ; 81                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; z8ty_fpga_core     ; z8ty-fpga          ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
++----------------------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path             ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+; Components/uart/bufferedUART.vhd             ; yes             ; User VHDL File  ; C:/Users/kramer/fpga/fpga/z8ty-coreep4ce6-board/Components/uart/bufferedUART.vhd             ;         ;
+; Components/timer/timer.vhd                   ; yes             ; User VHDL File  ; C:/Users/kramer/fpga/fpga/z8ty-coreep4ce6-board/Components/timer/timer.vhd                   ;         ;
+; Core/z8ty-fpga.vhd                           ; yes             ; User VHDL File  ; C:/Users/kramer/fpga/fpga/z8ty-coreep4ce6-board/Core/z8ty-fpga.vhd                           ;         ;
+; Components/leds/leds.vhd                     ; yes             ; User VHDL File  ; C:/Users/kramer/fpga/fpga/z8ty-coreep4ce6-board/Components/leds/leds.vhd                     ;         ;
+; Components/sdcard/sd_controller_hi_speed.vhd ; yes             ; User VHDL File  ; C:/Users/kramer/fpga/fpga/z8ty-coreep4ce6-board/Components/sdcard/sd_controller_hi_speed.vhd ;         ;
++----------------------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 938                ;
+;                                             ;                    ;
+; Total combinational functions               ; 759                ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 374                ;
+;     -- 3 input functions                    ; 185                ;
+;     -- <=2 input functions                  ; 200                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 655                ;
+;     -- arithmetic mode                      ; 104                ;
+;                                             ;                    ;
+; Total registers                             ; 490                ;
+;     -- Dedicated logic registers            ; 490                ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 81                 ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+; Maximum fan-out node                        ; serialClkCount[15] ;
+; Maximum fan-out                             ; 179                ;
+; Total fan-out                               ; 4097               ;
+; Average fan-out                             ; 2.89               ;
++---------------------------------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
+; |z8ty_fpga_core            ; 759 (116)         ; 490 (45)     ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |z8ty_fpga_core                   ; work         ;
+;    |bufferedUART:io3|      ; 218 (218)         ; 211 (211)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |z8ty_fpga_core|bufferedUART:io3  ; work         ;
+;    |freetimer:timer1|      ; 35 (35)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |z8ty_fpga_core|freetimer:timer1  ; work         ;
+;    |leds:io2|              ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |z8ty_fpga_core|leds:io2          ; work         ;
+;    |sd_controller:io4|     ; 379 (379)         ; 218 (218)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |z8ty_fpga_core|sd_controller:io4 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |z8ty_fpga_core|sd_controller:io4|return_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+------------------------------+---------------------------+--------------------------------+-------------------------------+--------------------------+-----------------------+------------------------------+------------------------------+-----------------------------+-------------------+----------------------+--------------------+-----------------------+---------------------+--------------------+-------------------+-------------------+-------------------+------------------+
+; Name                           ; return_state.write_block_wait ; return_state.write_block_byte ; return_state.write_block_data ; return_state.write_block_init ; return_state.write_block_cmd ; return_state.receive_byte ; return_state.receive_byte_wait ; return_state.receive_ocr_wait ; return_state.send_regreq ; return_state.send_cmd ; return_state.read_block_data ; return_state.read_block_wait ; return_state.read_block_cmd ; return_state.idle ; return_state.cardsel ; return_state.cmd58 ; return_state.poll_cmd ; return_state.acmd41 ; return_state.cmd55 ; return_state.cmd8 ; return_state.cmd0 ; return_state.init ; return_state.rst ;
++--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+------------------------------+---------------------------+--------------------------------+-------------------------------+--------------------------+-----------------------+------------------------------+------------------------------+-----------------------------+-------------------+----------------------+--------------------+-----------------------+---------------------+--------------------+-------------------+-------------------+-------------------+------------------+
+; return_state.rst               ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 0                ;
+; return_state.init              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 1                 ; 1                ;
+; return_state.cmd0              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 1                 ; 0                 ; 1                ;
+; return_state.cmd8              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 1                 ; 0                 ; 0                 ; 1                ;
+; return_state.cmd55             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 1                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.acmd41            ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 1                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.poll_cmd          ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 1                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.cmd58             ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 1                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.cardsel           ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 1                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.idle              ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 1                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.read_block_cmd    ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 1                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.read_block_wait   ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 1                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.read_block_data   ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 1                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.send_cmd          ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 1                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.send_regreq       ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 1                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.receive_ocr_wait  ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 1                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.receive_byte_wait ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 1                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.receive_byte      ; 0                             ; 0                             ; 0                             ; 0                             ; 0                            ; 1                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.write_block_cmd   ; 0                             ; 0                             ; 0                             ; 0                             ; 1                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.write_block_init  ; 0                             ; 0                             ; 0                             ; 1                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.write_block_data  ; 0                             ; 0                             ; 1                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.write_block_byte  ; 0                             ; 1                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
+; return_state.write_block_wait  ; 1                             ; 0                             ; 0                             ; 0                             ; 0                            ; 0                         ; 0                              ; 0                             ; 0                        ; 0                     ; 0                            ; 0                            ; 0                           ; 0                 ; 0                    ; 0                  ; 0                     ; 0                   ; 0                  ; 0                 ; 0                 ; 0                 ; 1                ;
++--------------------------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+------------------------------+---------------------------+--------------------------------+-------------------------------+--------------------------+-----------------------+------------------------------+------------------------------+-----------------------------+-------------------+----------------------+--------------------+-----------------------+---------------------+--------------------+-------------------+-------------------+-------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |z8ty_fpga_core|sd_controller:io4|state                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++-------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+--------------------+-------------------------+------------------------+-------------------+----------------+-----------------------+-----------------------+----------------------+------------+---------------+-------------+----------------+--------------+-------------+------------+------------+------------+-----------+
+; Name                    ; state.write_block_wait ; state.write_block_byte ; state.write_block_data ; state.write_block_init ; state.write_block_cmd ; state.receive_byte ; state.receive_byte_wait ; state.receive_ocr_wait ; state.send_regreq ; state.send_cmd ; state.read_block_data ; state.read_block_wait ; state.read_block_cmd ; state.idle ; state.cardsel ; state.cmd58 ; state.poll_cmd ; state.acmd41 ; state.cmd55 ; state.cmd8 ; state.cmd0 ; state.init ; state.rst ;
++-------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+--------------------+-------------------------+------------------------+-------------------+----------------+-----------------------+-----------------------+----------------------+------------+---------------+-------------+----------------+--------------+-------------+------------+------------+------------+-----------+
+; state.rst               ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 0         ;
+; state.init              ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 1          ; 1         ;
+; state.cmd0              ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 1          ; 0          ; 1         ;
+; state.cmd8              ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 1          ; 0          ; 0          ; 1         ;
+; state.cmd55             ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 1           ; 0          ; 0          ; 0          ; 1         ;
+; state.acmd41            ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 1            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.poll_cmd          ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 1              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.cmd58             ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 1           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.cardsel           ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 1             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.idle              ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 1          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.read_block_cmd    ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 1                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.read_block_wait   ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 1                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.read_block_data   ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 1                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.send_cmd          ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 1              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.send_regreq       ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 1                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.receive_ocr_wait  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 1                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.receive_byte_wait ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 1                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.receive_byte      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 1                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.write_block_cmd   ; 0                      ; 0                      ; 0                      ; 0                      ; 1                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.write_block_init  ; 0                      ; 0                      ; 0                      ; 1                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.write_block_data  ; 0                      ; 0                      ; 1                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.write_block_byte  ; 0                      ; 1                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
+; state.write_block_wait  ; 1                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                  ; 0                       ; 0                      ; 0                 ; 0              ; 0                     ; 0                     ; 0                    ; 0          ; 0             ; 0           ; 0              ; 0            ; 0           ; 0          ; 0          ; 0          ; 1         ;
++-------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+--------------------+-------------------------+------------------------+-------------------+----------------+-----------------------+-----------------------+----------------------+------------+---------------+-------------+----------------+--------------+-------------+------------+------------+------------+-----------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------+
+; State Machine - |z8ty_fpga_core|bufferedUART:io3|txState           ;
++-----------------+-----------------+-----------------+--------------+
+; Name            ; txState.stopBit ; txState.dataBit ; txState.idle ;
++-----------------+-----------------+-----------------+--------------+
+; txState.idle    ; 0               ; 0               ; 0            ;
+; txState.dataBit ; 0               ; 1               ; 1            ;
+; txState.stopBit ; 1               ; 0               ; 1            ;
++-----------------+-----------------+-----------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------+
+; State Machine - |z8ty_fpga_core|bufferedUART:io3|rxState           ;
++-----------------+-----------------+-----------------+--------------+
+; Name            ; rxState.stopBit ; rxState.dataBit ; rxState.idle ;
++-----------------+-----------------+-----------------+--------------+
+; rxState.idle    ; 0               ; 0               ; 0            ;
+; rxState.dataBit ; 0               ; 1               ; 1            ;
+; rxState.stopBit ; 1               ; 0               ; 1            ;
++-----------------+-----------------+-----------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; leds:io2|dataOut[0]                                 ; leds:io2|process_0           ; yes                    ;
+; leds:io2|dataOut[1]                                 ; leds:io2|process_0           ; yes                    ;
+; leds:io2|dataOut[2]                                 ; leds:io2|process_0           ; yes                    ;
+; leds:io2|LEDreturn[0]                               ; leds:io2|LEDreturn[2]        ; yes                    ;
+; freetimer:timer1|TimerOut[0]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; leds:io2|LEDreturn[1]                               ; leds:io2|LEDreturn[2]        ; yes                    ;
+; freetimer:timer1|TimerOut[1]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; leds:io2|LEDreturn[2]                               ; leds:io2|LEDreturn[2]        ; yes                    ;
+; freetimer:timer1|TimerOut[2]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; freetimer:timer1|TimerOut[3]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; freetimer:timer1|TimerOut[4]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; freetimer:timer1|TimerOut[5]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; freetimer:timer1|TimerOut[6]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; freetimer:timer1|TimerOut[7]                        ; freetimer:timer1|TimerOut[7] ; yes                    ;
+; leds:io2|leds_status[0]                             ; leds:io2|process_0           ; yes                    ;
+; leds:io2|leds_status[1]                             ; leds:io2|process_0           ; yes                    ;
+; leds:io2|leds_status[2]                             ; leds:io2|process_0           ; yes                    ;
+; Number of user-specified and inferred latches = 17  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++--------------------------------------------------+-------------------------------------------------+
+; Register name                                    ; Reason for Removal                              ;
++--------------------------------------------------+-------------------------------------------------+
+; sd_controller:io4|clkCount[0..5]                 ; Stuck at GND due to stuck port data_in          ;
+; sd_controller:io4|HighSpeed                      ; Lost fanout                                     ;
+; sd_controller:io4|return_state.cmd58             ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.init              ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.read_block_cmd    ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.receive_byte      ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.receive_byte_wait ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.receive_ocr_wait  ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.send_cmd          ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.send_regreq       ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.write_block_byte  ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.write_block_cmd   ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.write_block_data  ; Merged with sd_controller:io4|return_state.cmd0 ;
+; sd_controller:io4|return_state.cmd0              ; Stuck at GND due to stuck port data_in          ;
+; sd_controller:io4|cmd_out[0]                     ; Stuck at VCC due to stuck port data_in          ;
+; Total Number of Removed Registers = 20           ;                                                 ;
++--------------------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                        ;
++-------------------------------+---------------------------+----------------------------------------+
+; Register name                 ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------------------+---------------------------+----------------------------------------+
+; sd_controller:io4|clkCount[0] ; Stuck at GND              ; sd_controller:io4|cmd_out[0]           ;
+;                               ; due to stuck port data_in ;                                        ;
++-------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 490   ;
+; Number of registers using Synchronous Clear  ; 29    ;
+; Number of registers using Synchronous Load   ; 49    ;
+; Number of registers using Asynchronous Clear ; 79    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 369   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; sd_controller:io4|sdCS                 ; 2       ;
+; sd_controller:io4|cmd_mode             ; 2       ;
+; sd_controller:io4|led_on_count[7]      ; 2       ;
+; sd_controller:io4|led_on_count[6]      ; 2       ;
+; sd_controller:io4|led_on_count[3]      ; 2       ;
+; sd_controller:io4|init_busy            ; 4       ;
+; sd_controller:io4|response_mode        ; 3       ;
+; bufferedUART:io3|rxdFiltered           ; 5       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |z8ty_fpga_core|bufferedUART:io3|rxFilter[3]           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|address[10]          ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |z8ty_fpga_core|bufferedUART:io3|rxClockCount[0]       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |z8ty_fpga_core|bufferedUART:io3|rxBitCount[0]         ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|address[17]          ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|cmd_out[49]          ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |z8ty_fpga_core|bufferedUART:io3|txBitCount[1]         ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |z8ty_fpga_core|bufferedUART:io3|txBuffer[4]           ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |z8ty_fpga_core|bufferedUART:io3|txClockCount[2]       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |z8ty_fpga_core|sd_controller:io4|cmd_out[5]           ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|recv_data[24]        ;
+; 7:1                ; 26 bits   ; 104 LEs       ; 52 LEs               ; 52 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|cmd_out[36]          ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|cmd_out[16]          ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|data_sig[7]          ;
+; 13:1               ; 7 bits    ; 56 LEs        ; 7 LEs                ; 49 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|\fsm:byte_counter[3] ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 6 LEs                ; 21 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|\fsm:byte_counter[0] ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 6 LEs                ; 20 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|\fsm:bit_counter[6]  ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|\fsm:bit_counter[1]  ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |z8ty_fpga_core|sd_controller:io4|\fsm:bit_counter[2]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |z8ty_fpga_core|sd_controller:io4|dout                 ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |z8ty_fpga_core|fData[6]                               ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |z8ty_fpga_core|bufferedUART:io3|Selector36            ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; No         ; |z8ty_fpga_core|bufferedUART:io3|Selector12            ;
+; 11:1               ; 16 bits   ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |z8ty_fpga_core|sd_controller:io4|return_state.init    ;
+; 20:1               ; 9 bits    ; 117 LEs       ; 27 LEs               ; 90 LEs                 ; No         ; |z8ty_fpga_core|sd_controller:io4|Selector83           ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; No         ; |z8ty_fpga_core|sd_controller:io4|Selector97           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sd_controller:io4 ;
++-----------------+-------+--------------------------------------+
+; Parameter Name  ; Value ; Type                                 ;
++-----------------+-------+--------------------------------------+
+; clkedge_divider ; 100   ; Signed Integer                       ;
++-----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bufferedUART:io3"                                                                    ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; n_int ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; n_rts ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; n_cts ; Input  ; Info     ; Stuck at GND                                                                        ;
+; n_dcd ; Input  ; Info     ; Stuck at GND                                                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sun May 31 16:30:48 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off z8ty-fpga -c z8ty-fpga
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file components/mapper/mapper.vhd
+    Info (12022): Found design unit 1: mapper64k-rtl
+    Info (12023): Found entity 1: mapper64k
+Info (12021): Found 2 design units, including 1 entities, in source file components/uart/buffereduart.vhd
+    Info (12022): Found design unit 1: bufferedUART-rtl
+    Info (12023): Found entity 1: bufferedUART
+Info (12021): Found 2 design units, including 1 entities, in source file components/timer/timer.vhd
+    Info (12022): Found design unit 1: freetimer-rtl
+    Info (12023): Found entity 1: freetimer
+Info (12021): Found 2 design units, including 1 entities, in source file core/z8ty-fpga.vhd
+    Info (12022): Found design unit 1: z8ty_fpga_core-rtl
+    Info (12023): Found entity 1: z8ty_fpga_core
+Info (12021): Found 2 design units, including 1 entities, in source file components/leds/leds.vhd
+    Info (12022): Found design unit 1: leds-rtl
+    Info (12023): Found entity 1: leds
+Info (12021): Found 2 design units, including 1 entities, in source file components/sdcard/sd_controller_hi_speed.vhd
+    Info (12022): Found design unit 1: sd_controller-rtl
+    Info (12023): Found entity 1: sd_controller
+Info (12127): Elaborating entity "z8ty_fpga_core" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(59): used explicit default value for signal "fAddr_dir" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(67): used explicit default value for signal "fCtrlout_dir" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(77): used explicit default value for signal "fCtrlin_dir" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(86): used explicit default value for signal "fClkrst_dir" because signal was never assigned a value
+Warning (10541): VHDL Signal Declaration warning at z8ty-fpga.vhd(125): used implicit default value for signal "fPS2_clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at z8ty-fpga.vhd(129): used implicit default value for signal "fMA14_18" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(130): used explicit default value for signal "fMem_CE0" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(131): used explicit default value for signal "fMem_CE1" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at z8ty-fpga.vhd(158): object "nSerialInt" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at z8ty-fpga.vhd(160): used explicit default value for signal "nMsxMapperCs" because signal was never assigned a value
+Info (12128): Elaborating entity "leds" for hierarchy "leds:io2"
+Warning (10492): VHDL Process Statement warning at leds.vhd(35): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at leds.vhd(36): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at leds.vhd(37): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at leds.vhd(39): signal "dataIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at leds.vhd(29): inferring latch(es) for signal or variable "dataOut", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at leds.vhd(29): inferring latch(es) for signal or variable "leds_status", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at leds.vhd(29): inferring latch(es) for signal or variable "LEDreturn", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "LEDreturn[0]" at leds.vhd(29)
+Info (10041): Inferred latch for "LEDreturn[1]" at leds.vhd(29)
+Info (10041): Inferred latch for "LEDreturn[2]" at leds.vhd(29)
+Info (10041): Inferred latch for "leds_status[0]" at leds.vhd(29)
+Info (10041): Inferred latch for "leds_status[1]" at leds.vhd(29)
+Info (10041): Inferred latch for "leds_status[2]" at leds.vhd(29)
+Info (10041): Inferred latch for "dataOut[0]" at leds.vhd(29)
+Info (10041): Inferred latch for "dataOut[1]" at leds.vhd(29)
+Info (10041): Inferred latch for "dataOut[2]" at leds.vhd(29)
+Info (12128): Elaborating entity "bufferedUART" for hierarchy "bufferedUART:io3"
+Info (12128): Elaborating entity "sd_controller" for hierarchy "sd_controller:io4"
+Info (12128): Elaborating entity "freetimer" for hierarchy "freetimer:timer1"
+Warning (10492): VHDL Process Statement warning at timer.vhd(30): signal "nReset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(32): signal "nCs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(32): signal "nWr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(32): signal "Address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(35): signal "nCs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(35): signal "nRd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(37): signal "Address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(38): signal "timer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(40): signal "Address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at timer.vhd(41): signal "timer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at timer.vhd(24): inferring latch(es) for signal or variable "TimerOut", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "TimerOut[0]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[1]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[2]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[3]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[4]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[5]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[6]" at timer.vhd(24)
+Info (10041): Inferred latch for "TimerOut[7]" at timer.vhd(24)
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "bufferedUART:io3|rxBuffer" is uninferred due to asynchronous read logic
+Warning (13012): Latch freetimer:timer1|TimerOut[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Warning (13012): Latch freetimer:timer1|TimerOut[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fAddress[0]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "fAddr_dir" is stuck at GND
+    Warning (13410): Pin "fCtrlout_dir" is stuck at GND
+    Warning (13410): Pin "fCtrlin_dir" is stuck at GND
+    Warning (13410): Pin "fClkrst_dir" is stuck at GND
+    Warning (13410): Pin "fPS2_clk" is stuck at GND
+    Warning (13410): Pin "fMA14_18[0]" is stuck at GND
+    Warning (13410): Pin "fMA14_18[1]" is stuck at GND
+    Warning (13410): Pin "fMA14_18[2]" is stuck at GND
+    Warning (13410): Pin "fMA14_18[3]" is stuck at GND
+    Warning (13410): Pin "fMA14_18[4]" is stuck at GND
+    Warning (13410): Pin "fMem_CE0" is stuck at VCC
+    Warning (13410): Pin "fMem_CE1" is stuck at VCC
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register sd_controller:io4|driveLED will power up to Low
+    Critical Warning (18010): Register sd_controller:io4|led_on_count[7] will power up to High
+    Critical Warning (18010): Register sd_controller:io4|led_on_count[6] will power up to High
+    Critical Warning (18010): Register sd_controller:io4|led_on_count[3] will power up to High
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 34 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "fAddress[8]"
+    Warning (15610): No output dependent on input pin "fAddress[9]"
+    Warning (15610): No output dependent on input pin "fAddress[10]"
+    Warning (15610): No output dependent on input pin "fAddress[11]"
+    Warning (15610): No output dependent on input pin "fAddress[12]"
+    Warning (15610): No output dependent on input pin "fAddress[13]"
+    Warning (15610): No output dependent on input pin "fAddress[14]"
+    Warning (15610): No output dependent on input pin "fAddress[15]"
+    Warning (15610): No output dependent on input pin "fnRfsh"
+    Warning (15610): No output dependent on input pin "fnHalt"
+    Warning (15610): No output dependent on input pin "fnM1"
+    Warning (15610): No output dependent on input pin "fnMemrq"
+    Warning (15610): No output dependent on input pin "fnBusack"
+    Warning (15610): No output dependent on input pin "fnWait"
+    Warning (15610): No output dependent on input pin "fnInt"
+    Warning (15610): No output dependent on input pin "fnNmi"
+    Warning (15610): No output dependent on input pin "fnBusreq"
+    Warning (15610): No output dependent on input pin "fSpare1"
+    Warning (15610): No output dependent on input pin "fSpare2"
+    Warning (15610): No output dependent on input pin "fSpare3"
+    Warning (15610): No output dependent on input pin "fSpare4"
+    Warning (15610): No output dependent on input pin "fSpare5"
+    Warning (15610): No output dependent on input pin "fSpare6"
+    Warning (15610): No output dependent on input pin "fSpare7"
+    Warning (15610): No output dependent on input pin "fIn1"
+    Warning (15610): No output dependent on input pin "fIn2"
+    Warning (15610): No output dependent on input pin "fIn3"
+    Warning (15610): No output dependent on input pin "fIn4"
+    Warning (15610): No output dependent on input pin "fIn5"
+    Warning (15610): No output dependent on input pin "fIn6"
+    Warning (15610): No output dependent on input pin "fIn7"
+    Warning (15610): No output dependent on input pin "fIn8"
+    Warning (15610): No output dependent on input pin "fAltclk"
+    Warning (15610): No output dependent on input pin "fPS2_dat"
+Info (21057): Implemented 1027 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 52 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 946 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 98 warnings
+    Info: Peak virtual memory: 4678 megabytes
+    Info: Processing ended: Sun May 31 16:30:52 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+

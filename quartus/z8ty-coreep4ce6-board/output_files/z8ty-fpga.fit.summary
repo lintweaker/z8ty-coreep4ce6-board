@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun May 31 16:30:59 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : z8ty-fpga
+Top-level Entity Name : z8ty_fpga_core
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 869 / 6,272 ( 14 % )
+    Total combinational functions : 760 / 6,272 ( 12 % )
+    Dedicated logic registers : 490 / 6,272 ( 8 % )
+Total registers : 490
+Total pins : 81 / 92 ( 88 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

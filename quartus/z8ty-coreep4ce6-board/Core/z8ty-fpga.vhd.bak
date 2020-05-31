@@ -1,0 +1,31 @@
+-- Z8TY CoreEP4CE6 FGPA board
+-- For Waveshare CoreEP4CE6 FPGA module
+-- Cyclone IV EP4CE6E22C8N in QFP144 housing and EPCS16 flash
+-- 20200505 Jurgen Kramer
+-- Initial version for bringing up and testing the board
+--
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity z8ty_fpga_core is
+  port (
+    clk_in   : in std_logic;
+    rst      : in std_logic;
+    spi_clk  : out std_logic;
+    spi_cs   : out std_logic;
+    spi_din  : in std_logic;
+    spi_dout : out std_logic;
+    sel      : in std_logic;
+    wr       : in std_logic;
+    addr     : in std_logic_vector (2 downto 0);
+    d_in     : in std_logic_vector (7 downto 0);
+    d_out    : out std_logic_vector (7 downto 0)
+  );
+end z8ty_fpga_core;
+
+architecture rtl of z8ty_fpga_core is
+begin
+
+end rtl;

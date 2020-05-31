@@ -1,0 +1,234 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+# Date created = 17:22:35  May 05, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		z8ty-fpga_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY z8ty_fpga_core
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:22:35  MAY 05, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE "ANY QFP"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_FILE "Core/z8ty-fpga.vhd"
+set_global_assignment -name VHDL_FILE Components/leds/leds.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_3 -to leds[0]
+set_location_assignment PIN_7 -to leds[1]
+set_location_assignment PIN_10 -to leds[2]
+set_location_assignment PIN_11 -to leds[3]
+set_location_assignment PIN_71 -to fData[0]
+set_location_assignment PIN_70 -to fData[1]
+set_location_assignment PIN_73 -to fData[2]
+set_location_assignment PIN_72 -to fData[3]
+set_location_assignment PIN_43 -to fdata[4]
+set_location_assignment PIN_44 -to fData[5]
+set_location_assignment PIN_46 -to fData[6]
+set_location_assignment PIN_49 -to fData[7]
+set_location_assignment PIN_75 -to fnWr
+set_location_assignment PIN_50 -to fnRd
+set_location_assignment PIN_143 -to fnIorq
+set_location_assignment PIN_1 -to fnMemrq
+set_location_assignment PIN_141 -to fnInt
+set_location_assignment PIN_144 -to fnM1
+set_location_assignment PIN_65 -to fAddress[0]
+set_location_assignment PIN_64 -to fAddress[1]
+set_location_assignment PIN_67 -to fAddress[2]
+set_location_assignment PIN_66 -to fAddress[3]
+set_location_assignment PIN_69 -to fAddress[4]
+set_location_assignment PIN_74 -to fAddress[5]
+set_location_assignment PIN_77 -to fAddress[6]
+set_location_assignment PIN_76 -to fAddress[7]
+set_location_assignment PIN_83 -to fAddress[8]
+set_location_assignment PIN_80 -to fAddress[9]
+set_location_assignment PIN_34 -to fAddress[10]
+set_location_assignment PIN_33 -to fAddress[11]
+set_location_assignment PIN_38 -to fAddress[12]
+set_location_assignment PIN_39 -to fAddress[13]
+set_location_assignment PIN_31 -to fAddress[14]
+set_location_assignment PIN_32 -to fAddress[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddress[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnWr
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnRd
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnIorq
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnMemrq
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnInt
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnM1
+
+
+
+set_location_assignment PIN_60 -to fAddr_dir
+set_location_assignment PIN_142 -to fnBusack
+set_location_assignment PIN_133 -to fnClk
+set_location_assignment PIN_127 -to fnReset
+set_location_assignment PIN_30 -to fnRfsh
+set_location_assignment PIN_138 -to fnWait
+set_location_assignment PIN_104 -to nBtn_usr
+set_location_assignment PIN_86 -to nBtn_reset
+set_location_assignment PIN_136 -to fnNmi
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAddr_dir
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnBusack
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnClk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnReset
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnRfsh
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnWait
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nBtn_usr
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nBtn_reset
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnNmi
+
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+
+set_location_assignment PIN_59 -to fAltclk
+set_location_assignment PIN_129 -to fClkrst_dir
+set_location_assignment PIN_135 -to fCtrlin_dir
+set_location_assignment PIN_55 -to fCtrlout_dir
+set_location_assignment PIN_42 -to fMA14_18[0]
+set_location_assignment PIN_51 -to fMA14_18[1]
+set_location_assignment PIN_52 -to fMA14_18[2]
+set_location_assignment PIN_53 -to fMA14_18[3]
+set_location_assignment PIN_54 -to fMA14_18[4]
+set_location_assignment PIN_68 -to fMem_CE0
+set_location_assignment PIN_2 -to fMem_CE1
+set_location_assignment PIN_137 -to fnBusreq
+set_location_assignment PIN_28 -to fnHalt
+set_location_assignment PIN_84 -to fPS2_clk
+set_location_assignment PIN_85 -to fPS2_dat
+set_location_assignment PIN_111 -to fRxd
+set_location_assignment PIN_99 -to fSD_CLK
+set_location_assignment PIN_98 -to fSD_DI
+set_location_assignment PIN_87 -to fSD_DO
+set_location_assignment PIN_113 -to fSpare1
+set_location_assignment PIN_115 -to fSpare2
+set_location_assignment PIN_120 -to fSpare3
+set_location_assignment PIN_124 -to fSpare4
+set_location_assignment PIN_132 -to fSpare5
+set_location_assignment PIN_128 -to fSpare6
+set_location_assignment PIN_126 -to fSpare7
+set_location_assignment PIN_23 -to fClk_50MHz
+set_location_assignment PIN_106 -to fTxd
+
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fTxd
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fAltclk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fClkrst_dir
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fCtrlin_dir
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fCtrlout_dir
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMA14_18[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMA14_18[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMA14_18[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMA14_18[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMA14_18[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMem_CE0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fMem_CE1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnBusreq
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fnHalt
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fPS2_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fPS2_dat
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fRxd
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSD_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSD_DI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSD_DO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fSpare7
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[3]
+
+
+
+set_location_assignment PIN_103 -to fIn2
+set_location_assignment PIN_105 -to fIn3
+set_location_assignment PIN_110 -to fIn4
+set_location_assignment PIN_112 -to fIn5
+set_location_assignment PIN_114 -to fIn6
+set_location_assignment PIN_119 -to fIn7
+set_location_assignment PIN_121 -to fIn8
+set_location_assignment PIN_58 -to fData_dir
+set_location_assignment PIN_100 -to fIn1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fIn8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fData_dir
+
+
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
